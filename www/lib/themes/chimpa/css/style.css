@@ -1,0 +1,8 @@
+body {
+	background: #FFF;
+}
+
+div#contenedor, footer {
+	margin: 0 auto;
+	width: 90%
+}
