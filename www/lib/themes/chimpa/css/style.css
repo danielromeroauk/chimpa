@@ -4,11 +4,16 @@ body {
 	background: url("../img/bg.gif") repeat-x scroll left top rgb(222, 240, 227);
     color: #000;
     font-family: "Salsa";
+    font-size: 16px;
 }
 
 div#contenedor, footer {
 	margin: 0 auto;
 	width: 90%
+}
+
+footer {
+	font-size: .6em;
 }
 
 h1, h2 {
@@ -19,4 +24,32 @@ h1, h2 {
 
 h1 > small {
 	color: yellow;
+}
+
+input[type="text"], input[type="password"] {
+	border-radius: .5em;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0,.6);
+	font-family: "Salsa";
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+	background: #FFF8FF;
+	border-radius: .5em 0;
+	box-shadow: 3px 3px 5px rgba(25, 25, 112,.9);
+}
+
+section#contenido, aside#lateral1, section#logueo > form, section#logueo > img  {
+	display: inline-block;
+	vertical-align: top;
+}
+
+section#logueo {
+	margin: 1em 0 0 0;
+}
+
+section#logueo > img {
+	height: 118px;
+	border-radius: .6em;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0,.6);
+	margin: 0 10px;
 }
