@@ -35,7 +35,13 @@
       </header>
       <nav id="menu-principal">
       	<ul>
-      		<li>Lugar<ul><li>Agregar</li><li>Editar</li><li>Listado</li></ul></li>
+      		<li>Lugar
+            <ul>
+              <li><a href="#">Agregar</a></li>
+              <li><a href="#">Editar</a></li>
+              <li><a href="#">Listado</a></li>
+              </ul>
+            </li>
     			<li>Usuarios
             <ul>
         			<li><a href="#">Agregar</a></li>
@@ -45,22 +51,22 @@
           </li>
     			<li>Remisiones
             <ul>
-        			<li>Compra</li>
-        			<li>Venta</li>
-        			<li>Rotación</li>
-        			<li>Entrega inmediata</li>
+        			<li><a href="#">Compra</a></li>
+        			<li><a href="#">Venta</a></li>
+        			<li><a href="#">Rotación</a></li>
+        			<li><a href="#">Entrega inmediata</a></li>
             </ul>
           </li>
     			<li>Artículos
             <ul>
-        			<li>Agregar</li>
-        			<li>Editar</li>
-        			<li>Listado</li>
-        			<li>Extracto</li>
-        			<li>Apartar</li>
+        			<li><a href="#">Agregar</a></li>
+        			<li><a href="#">Editar</a></li>
+        			<li><a href="#">Listado</a></li>
+        			<li><a href="#">Extracto</a></li>
+        			<li><a href="#">Apartar</a></li>
             </ul>
           </li>
-    			<li>Remisiones pendientes</li>
-    			<li>Cerrar sesión</li>
+    			<li><a href="#">Remisiones pendientes</a></li>
+    			<li><a href="#">Cerrar sesión</a></li>
       	</ul>
       </nav>
