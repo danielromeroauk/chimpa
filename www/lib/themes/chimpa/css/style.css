@@ -1,8 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Salsa|Keania+One);
+
 body {
-	background: #FFF;
+	background: url("../img/bg.gif") repeat-x scroll left top rgb(222, 240, 227);
+    color: #000;
+    font-family: "Salsa";
 }
 
 div#contenedor, footer {
 	margin: 0 auto;
 	width: 90%
+}
+
+h1, h2 {
+    color: #FFF;
+	font-family: "Keania One";
+	text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+}
+
+h1 > small {
+	color: yellow;
 }
