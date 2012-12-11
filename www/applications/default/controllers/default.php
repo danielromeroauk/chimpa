@@ -10,7 +10,7 @@ class Default_Controller extends ZP_Controller {
 
 		$this->Templates = $this->core("Templates");
 
-		$this->Templates->theme("chimpa");
+		$this->Templates->theme();
 	}
 
 	public function index() {
@@ -18,8 +18,7 @@ class Default_Controller extends ZP_Controller {
 	}
 
 	public function login() {
-		$vars["view"]	 = $this->view("login", TRUE);
-		$vars["algo"] = "Si se puede renderizar información en el footer siempre y cuando se renderice content con $vars";
+		$vars["login"]	 = $this->view("login", TRUE);
 		$this->render("content", $vars);
 	}
 
