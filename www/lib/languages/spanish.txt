@@ -1,0 +1,4 @@
+--- 11/12/2012 ---
+all_rights_reserved
+powered_by
+error_message
