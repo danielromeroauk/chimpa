@@ -22,4 +22,3 @@
         <h1>Construimportados.com <small>Control de inventarios</small></h1>
       </header>
       <nav id="menu-principal"></nav>
-      <aside id="anuncios"></aside>
