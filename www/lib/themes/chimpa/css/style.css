@@ -38,6 +38,11 @@ input[type="text"]:focus, input[type="password"]:focus {
 	box-shadow: 3px 3px 5px rgba(25, 25, 112,.9);
 }
 
+nav#menu-principal ul li ul li {
+	display: block;
+	width: 100%;
+}
+
 section#contenido, aside#lateral1, section#logueo > form, section#logueo > img  {
 	display: inline-block;
 	vertical-align: top;
