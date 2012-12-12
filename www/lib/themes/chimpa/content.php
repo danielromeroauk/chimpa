@@ -1,6 +1,14 @@
 <section id="contenido">
-	<?php #$this->load(isset($view) ? $view : "NULL", TRUE); ?>
+	<?php
+    if(isset($view)) {
+      $this->load($view, TRUE);
+    }
+  ?>
 </section>
 <section id="lateral1">
-  <?php $this->load(isset($login) ? $login : NULL, TRUE); ?>
+  <?php
+  	if(isset($login)) {
+      $this->load($login, TRUE);
+  	}
+  ?>
 </section>
