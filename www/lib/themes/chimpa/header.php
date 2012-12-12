@@ -8,8 +8,9 @@
 
 		<link href="<?php print $this->themePath; ?>/css/kendo.common.min.css" rel="stylesheet" />
     <link href="<?php print $this->themePath; ?>/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.9.2/themes/cupertino/jquery-ui.css" rel="stylesheet">
 
-		<link href="<?php print $this->themePath; ?>/css/style.css" rel="stylesheet" />
+    <link href="<?php print $this->themePath; ?>/css/style.css" rel="stylesheet" />
 
 		<?php print $this->getCSS(); ?>
 
@@ -19,8 +20,8 @@
 			<![endif]-->
 		<!-- Le styles -->
 
-		<!--<script src="<?php #print $this->themePath; ?>/js/jquery.min.js"></script>-->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="<?php print $this->themePath; ?>/js/kendo.web.min.js"></script>
     <script src="<?php print $this->themePath; ?>/js/chimpa.js"></script>
 
@@ -33,6 +34,7 @@
       <header>
         <h1>Construimportados.com <small>Control de inventarios</small></h1>
       </header>
+      <?php if (SESSION("user")) { ?>
       <nav id="menu-principal">
       	<ul>
       		<li>Lugar
@@ -67,6 +69,7 @@
             </ul>
           </li>
     			<li><a href="#">Remisiones pendientes</a></li>
-    			<li><a href="#">Cerrar sesión</a></li>
+    			<li><a href="<?php echo get("webURL"); ?>/default/default/logout">Cerrar sesión</a></li>
       	</ul>
       </nav>
+      <?php } #if ?>
