@@ -14,23 +14,24 @@ class Default_Controller extends ZP_Controller {
 	}
 
 	public function index() {
-    self::login();
+    if(isConnected(get("webURL") .'/default/default/login')) {
+      self::inicio();
+    }
   }
 
   public function login() {
-		$this->title("Login");
+    $this->title("Login");
     $this->Usuario_Model = $this->model("Usuario_Model");
 
     if (POST('entrar')) {
       $vars["alert"] = $this->Usuario_Model->valido(POST("user"), POST("pass"));
-      if ($vars["alert"] === TRUE) {
-        self::inicio();
-      }
     }
 
-    if (!POST('entrar') || $vars["alert"] !== TRUE) {
-      $vars["login"] = $this->view("login", TRUE);
+    if (!SESSION("user")) {
+      $vars["view"] = $this->view("login", TRUE);
       $this->render("content", $vars);
+    } else {
+      redirect(get("webURL") .'/default/default/inicio');
     }
 
 	}
