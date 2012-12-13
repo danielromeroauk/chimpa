@@ -48,4 +48,12 @@ class Default_Controller extends ZP_Controller {
       unsetSessions();
   }
 
+  public function usuariosListado(){
+    $this->title("Listado de usuarios");
+    $vars["title"] = "Estamos dentro";
+    $vars["headers"] = array("Col 1", "Col 2", "Col 3");
+    $vars["data"] = array(array(1, 2, 3), array(4, 5, 6), array(10, 20, 30));
+    $vars["view"] = $this->view("table", TRUE);
+    $this->render("content", $vars);
+  }
 }
