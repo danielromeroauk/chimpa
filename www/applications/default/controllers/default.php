@@ -37,6 +37,7 @@ class Default_Controller extends ZP_Controller {
 	}
 
   public function inicio() {
+    isConnected(get("webURL"));
     $this->title("Inicio");
     $vars["message"] = "Estamos dentro";
     $vars["view"] = $this->view("show", TRUE);
