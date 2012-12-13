@@ -15,7 +15,7 @@ class Default_Controller extends ZP_Controller {
 
 	public function index() {
     if(isConnected(get("webURL") .'/default/default/login')) {
-      self::inicio();
+      redirect(get("webURL") .'/default/default/inicio');
     }
   }
 
