@@ -11,7 +11,7 @@
  * @link		http://www.zanphp.com
  * @version		1.0
  */
- 
+
 /**
  * Access from index.php:
  */
@@ -22,7 +22,7 @@ if(!defined("_access")) {
 /**
  * Sessions Helper
  *
- * 
+ *
  *
  * @package		ZanPHP
  * @subpackage	core
@@ -34,9 +34,9 @@ if(!defined("_access")) {
 function COOKIE($cookie, $value = FALSE, $time = 300000, $redirect = FALSE, $URL = FALSE) {
 	if($value) {
 		setcookie($cookie, filter($value), time() + $time, "/");
-	
+
 		if($redirect) {
-			redirect(isset($URL) ? $URL : get("webBase"));		
+			redirect(isset($URL) ? $URL : get("webBase"));
 		}
 	} else {
 		if(isset($_COOKIE[$cookie])) {
@@ -51,10 +51,10 @@ function COOKIE($cookie, $value = FALSE, $time = 300000, $redirect = FALSE, $URL
  * SESSION
  *
  * Returns a $_SESSION index variable value
- * 
+ *
  * @param string $session
  * @return mixed
- */ 
+ */
 function SESSION($session, $value = FALSE) {
 	if(!$value) {
 		if(isset($_SESSION[$session])) {
@@ -65,14 +65,14 @@ function SESSION($session, $value = FALSE) {
 	} else {
 		$_SESSION[$session] = $value;
 	}
-	
+
 	return TRUE;
 }
 
 function isConnected($URL = FALSE) {
-	if(!SESSION("ZanUser")) {
+	if(!SESSION("user")) {
 		redirect($URL);
-	} 
+	}
 
 	return TRUE;
 }
@@ -81,14 +81,14 @@ function isConnected($URL = FALSE) {
  * unsetCookie
  *
  * Removes a cookie
- * 
+ *
  * @param $cookie
  * @param $URL    = _webBase
  * @return void
- */ 
+ */
 function unsetCookie($cookie, $URL = FALSE) {
-	setcookie($cookie);	
-	
+	setcookie($cookie);
+
 	if($URL) {
 		redirect($URL);
 	} else {
@@ -100,14 +100,14 @@ function unsetCookie($cookie, $URL = FALSE) {
  * unsetSessions
  *
  * Unsets all started sessions variables
- * 
+ *
  * @param $URL    = _webBase
  * @return void
- */ 
+ */
 function unsetSessions($URL = FALSE) {
-	session_unset(); 
-	session_destroy();	
-	
+	session_unset();
+	session_destroy();
+
 	if($URL) {
 		redirect($URL);
 	} else {
