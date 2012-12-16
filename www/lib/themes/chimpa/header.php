@@ -39,7 +39,7 @@
       	<ul>
       		<li>Lugar
             <ul>
-              <li><a href="#">Agregar</a></li>
+              <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/add">Agregar</a></li>
               <li><a href="#">Editar</a></li>
               <li><a href="#">Listado</a></li>
               </ul>
