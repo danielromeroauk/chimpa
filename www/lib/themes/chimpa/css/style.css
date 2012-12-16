@@ -16,7 +16,7 @@ footer {
 	font-size: .6em;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #FFF;
 	font-family: "Keania One";
 	text-shadow: 3px 3px 5px rgba(0,0,0,.5);
@@ -36,6 +36,10 @@ input[type="text"]:focus, input[type="password"]:focus {
 	background: #FFF8FF;
 	border-radius: .5em 0;
 	box-shadow: 3px 3px 5px rgba(25, 25, 112,.9);
+}
+
+input[type="submit"] {
+	font-size: .8em;
 }
 
 nav#menu-principal {
@@ -68,6 +72,10 @@ section#logueo > img {
 	margin: 0 .6em;
 }
 
-section#logueo #entrar {
-	font-size: .8em;
+.forms label {
+	display: inline;
+}
+
+.right {
+	text-align: right;
 }
