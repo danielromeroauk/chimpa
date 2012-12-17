@@ -1,81 +1,101 @@
 @import url(http://fonts.googleapis.com/css?family=Salsa|Keania+One);
 
 body {
-	background: url("../img/bg.gif") repeat-x scroll left top rgb(222, 240, 227);
-    color: #000;
-    font-family: "Salsa";
-    font-size: 16px;
+  background: url("../img/bg.gif") repeat-x scroll left top rgb(222, 240, 227);
+  color: #000;
+  font-family: "Salsa";
+  font-size: 16px;
+}
+
+*[class*="ui-"] {
+  font-size: .8em;
 }
 
 div#contenedor, footer {
-	margin: 0 auto;
-	width: 90%
+  margin: 0 auto;
+  width: 90%
 }
 
 footer {
-	font-size: .6em;
+  font-size: .6em;
 }
 
 h1, h2, h3 {
-    color: #FFF;
-	font-family: "Keania One";
-	text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+  color: #FFF;
+  font-family: "Keania One";
+  text-shadow: 3px 3px 5px rgba(0,0,0,.5);
 }
 
 h1 > small {
-	color: yellow;
+  color: yellow;
 }
 
 input[type="text"], input[type="password"] {
-	border-radius: .5em;
-	box-shadow: 3px 3px 5px rgba(0, 0, 0,.6);
-	font-family: "Salsa";
+  border-radius: .5em;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0,.6);
+  font-family: "Salsa";
 }
 
 input[type="text"]:focus, input[type="password"]:focus {
-	background: #FFF8FF;
-	border-radius: .5em 0;
-	box-shadow: 3px 3px 5px rgba(25, 25, 112,.9);
-}
-
-input[type="submit"] {
-	font-size: .8em;
+  background: #FFF8FF;
+  border-radius: .5em 0;
+  box-shadow: 3px 3px 5px rgba(25, 25, 112,.9);
 }
 
 nav#menu-principal {
-	margin: 0 0 1em 0;
+  margin: 0 0 1em 0;
 }
 
 nav#menu-principal ul li a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 nav#menu-principal ul li ul li {
-	display: block;
-	font-size: .9em;
-	width: 100%;
+  display: block;
+  font-size: .9em;
+  width: 100%;
 }
 
 section#contenido, aside#lateral1, section#logueo > form, section#logueo > img  {
-	display: inline-block;
-	vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 section#logueo {
-	margin: 0;
+  margin: 0;
 }
 
 section#logueo > img {
-	height: 155px;
-	border-radius: .6em;
-	box-shadow: 3px 3px 5px rgba(0, 0, 0,.6);
-	margin: 0 .6em;
+  height: 155px;
+  border-radius: .6em;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0,.6);
+  margin: 0 .6em;
 }
 
 .forms label {
-	display: inline;
+  display: inline;
+}
+
+.listado {
+  margin: 1em 0;
+}
+
+.listado th, .listado td {
+  padding: .5em;
+  border: solid 1px #000;
+}
+
+.listado th {
+  background: url("../img/bg.gif") repeat-x rgb(222, 240, 227);
+  box-shadow: 0 3px 2px rgba(0,0,0,.8);
+  color: yellow;
+  text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+}
+
+.listado tbody tr:hover {
+  background: #DFF4FF;
 }
 
 .right {
-	text-align: right;
+  text-align: right;
 }
