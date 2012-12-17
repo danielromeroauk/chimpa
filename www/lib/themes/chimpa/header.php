@@ -34,42 +34,8 @@
       <header>
         <h1>Construimportados.com <small>Control de inventarios</small></h1>
       </header>
-      <?php if (SESSION("user")) { ?>
-      <nav id="menu-principal">
-      	<ul>
-      		<li>Lugar
-            <ul>
-              <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/add">Agregar</a></li>
-              <li><a href="#">Editar</a></li>
-              <li><a href="#">Listado</a></li>
-              </ul>
-            </li>
-    			<li>Usuarios
-            <ul>
-        			<li><a href="#">Agregar</a></li>
-        			<li><a href="#">Editar</a></li>
-        			<li><a href="#">Listado</a></li>
-            </ul>
-          </li>
-    			<li>Remisiones
-            <ul>
-        			<li><a href="#">Compra</a></li>
-        			<li><a href="#">Venta</a></li>
-        			<li><a href="#">Rotación</a></li>
-        			<li><a href="#">Entrega inmediata</a></li>
-            </ul>
-          </li>
-    			<li>Artículos
-            <ul>
-        			<li><a href="#">Agregar</a></li>
-        			<li><a href="#">Editar</a></li>
-        			<li><a href="#">Listado</a></li>
-        			<li><a href="#">Extracto</a></li>
-        			<li><a href="#">Apartar</a></li>
-            </ul>
-          </li>
-    			<li><a href="#">Remisiones pendientes</a></li>
-    			<li><a href="<?php echo get("webURL"); ?>/default/default/logout">Cerrar sesión</a></li>
-      	</ul>
-      </nav>
-      <?php } #if ?>
+      <?php
+        if (SESSION("user")) {
+          require_once 'menu.php';
+        } #if
+      ?>
