@@ -32,16 +32,32 @@ class Establecimiento_Controller extends ZP_Controller {
     $this->render("content", $vars);
   }
 
-  public function edit() {
+  public function edit($id) {
+    isConnected(get("webURL"));
+    if(!in_array(SESSION("rol"), array(0))) { redirect(get("webURL") .'/default/default/inicio'); }
 
+    $this->title("Editar establecimiento");
+    $this->Establecimiento_Model = $this->model("Establecimiento_Model");
+
+    if (POST('edit')) {
+      $vars["alert"] = $this->Establecimiento_Model->edit();
+    }
+
+    $vars["edit"] = TRUE;
+    $vars["data"] = $this->Establecimiento_Model->getById(urldecode($id));
+    $vars["view"] = $this->view("establecimiento", TRUE);
+    $this->render("content", $vars);
   }
 
-  public function listado() {
+  public function listado($editar = FALSE) {
     if(!in_array(SESSION("rol"), array(0))) { redirect(get("webURL") .'/default/default/inicio'); }
 
     $this->Establecimiento_Model = $this->model("Establecimiento_Model");
-    $data = $this->Establecimiento_Model->getListado();
-    ____($data);
+
+    $vars["editar"] = ($editar == TRUE) ? $editar : FALSE;
+    $vars["data"] = $this->Establecimiento_Model->getListado();
+    $vars["view"] = $this->view("establecimientos", TRUE);
+    $this->render("content", $vars);
   }
 
 }

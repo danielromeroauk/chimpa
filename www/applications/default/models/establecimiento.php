@@ -43,7 +43,30 @@ class Establecimiento_Model extends ZP_Model {
 
   public function getById($id) {
     $data = $this->Db->find($id, $this->table, $this->fields);
+    //____($data);
     return $data[0];
   }
+
+  public function edit() {
+    $validations = array(
+      "id" => "required",
+      "nombre" => "required",
+      "direccion" => "required",
+      "telefono" => "required",
+    );
+
+      $this->Data->ignore("edit");
+
+      $data = $this->Data->proccess(NULL, $validations);
+
+    if(isset($data["error"])) {
+          return $data["error"];
+    } elseif($this->Db->update($this->table, $data, "id='". urldecode(POST("id")) ."'") === FALSE) {
+        return getAlert("No fue posible modificar el establecimiento.");
+    } else {
+       return getAlert("El establecimiento fue modificado con éxito.", "notice");
+    }
+
+  } #edit
 
 } #Establecimiento_Model
