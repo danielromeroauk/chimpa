@@ -4,8 +4,8 @@
       <li>Lugar
         <ul>
           <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/add">Agregar</a></li>
-          <li><a href="#">Editar</a></li>
-          <li><a href="#">Listado</a></li>
+          <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/listado/true">Editar</a></li>
+          <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/listado">Listado</a></li>
           </ul>
         </li>
       <li>Usuarios
