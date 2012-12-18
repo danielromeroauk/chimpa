@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Salsa|Keania+One);
+@import url(http://fonts.googleapis.com/css?family=Salsa|Keania+One|Amaranth);
 
 body {
   background: url("../img/bg.gif") repeat-x scroll left top rgb(222, 240, 227);
@@ -20,9 +20,15 @@ footer {
   font-size: .6em;
 }
 
-h1, h2, h3 {
+h1 {
   color: #FFF;
   font-family: "Keania One";
+  text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+}
+
+h2, h3 {
+  color: #FFF;
+  font-family: "Amaranth";
   text-shadow: 3px 3px 5px rgba(0,0,0,.5);
 }
 
