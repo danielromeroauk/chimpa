@@ -11,11 +11,12 @@ class Usuario_Controller extends ZP_Controller {
         $this->Templates = $this->core("Templates");
 
         $this->Templates->theme();
+
+        $this->Usuario_Model = $this->model("Usuario_Model");
     }
 
   public function usuariosListado(){
     $this->title("Listado de usuarios");
-    $this->Usuario_Model = $this->model("Usuario_Model");
     $data = $this->Usuario_Model->users_list();
     //____($data);
 
@@ -23,6 +24,17 @@ class Usuario_Controller extends ZP_Controller {
     $vars["headers"] = array("Id", "Apellidos", "Nombres", "Nickname", "Direccion", "Telefono", "Estado", "Rol");
     $vars["data"] = $data;
     $vars["view"] = $this->view("table", TRUE);
+    $this->render("content", $vars);
+  }
+
+  public function agregar() {
+    $this->title("Agregar usuario");
+    if (POST('add')) {
+      $vars["alert"] = $this->Usuario_Model->add();
+    }
+
+    $vars["view"] = $this->view("add_user", TRUE);
+
     $this->render("content", $vars);
   }
 }
