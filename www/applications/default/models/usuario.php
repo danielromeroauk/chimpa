@@ -26,4 +26,43 @@ class Usuario_Model extends ZP_Model {
 		}
 	}
 
+	public function users_list($limit = "0, 30") {
+		$data = $this->Db->query("SELECT id, apellidos, nombres, nickname, direccion, telefono, estado, rol FROM usuario ORDER BY apellidos, nombres, nickname LIMIT $limit");
+		return $data;
+	}
+
+	public function add() {
+		$validations = array(
+			"id" => "required",
+			"nombres" => "required",
+			"apellidos" => "required",
+			"nickname" => "required",
+			"rol" => "required",
+		);
+
+		$this->Data = $this->core("Data");
+		$this->Data->ignore(array("add", "lugar"));
+		$data = $this->Data->proccess(NULL, $validations);
+
+		____($data);
+		if (isset($data["error"])) {
+			return $data["error"];
+		}
+
+		$this->Db->insert($this->table, $data);
+		return getAlert("Contact has been inserted correctly", "success");
+	}
+
+	public function set_ubicacion($nick, $establec) {
+		if (empty($nick) || empty($establec)){
+			return "";
+		}
+
+		$data['usuario'] = $nick;
+		$data['establecimiento'] = $establec;
+		$data['fecha'] = date("d M Y H:i:s");
+		$data['responsable'] = "19470973";
+		$this->Db->insert('ubicacion', $data);
+		return TRUE;
+	}
 }
