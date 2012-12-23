@@ -4,7 +4,7 @@
       <li>Lugar
         <ul>
           <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/add">Agregar</a></li>
-          <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/listado/true">Editar</a></li>
+          <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/listado/TRUE">Editar</a></li>
           <li><a href="<?php echo get("webURL"); ?>/default/establecimiento/listado">Listado</a></li>
           </ul>
         </li>
@@ -18,10 +18,10 @@
     <?php } #if ?>
     <li>Artículos
       <ul>
-        <?php if(in_array(SESSION("rol"), array(0,4))) { ?><li><a href="#">Agregar</a></li><?php } #if ?>
-        <?php if(in_array(SESSION("rol"), array(0,4))) { ?><li><a href="#">Editar</a></li><?php } #if ?>
+        <?php if(in_array(SESSION("rol"), array(0,4))) { ?><li><a href="<?php echo get("webURL"); ?>/default/articulo/add">Agregar</a></li><?php } #if ?>
+        <?php if(in_array(SESSION("rol"), array(0,4))) { ?><li><a href="<?php echo get("webURL"); ?>/default/articulo/listado/TRUE">Editar</a></li><?php } #if ?>
         <?php if(in_array(SESSION("rol"), array(0))) { ?><li><a href="#">Extracto</a></li><?php } #if ?>
-        <?php if(in_array(SESSION("rol"), array(0,1,2,3,4))) { ?><li><a href="#">Listado</a></li><?php } #if ?>
+        <?php if(in_array(SESSION("rol"), array(0,1,2,3,4))) { ?><li><a href="<?php echo get("webURL"); ?>/default/articulo/listado">Listado</a></li><?php } #if ?>
         <?php if(in_array(SESSION("rol"), array(0,1,2,3,4))) { ?><li><a href="#">Apartar</a></li><?php } #if ?>
       </ul>
     </li>
