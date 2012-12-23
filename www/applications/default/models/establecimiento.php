@@ -24,7 +24,7 @@ class Establecimiento_Model extends ZP_Model {
       "id" => "required",
       "nombre" => "required",
       "direccion" => "required",
-      "telefono" => "required",
+      "telefono" => "required"
     );
 
       $this->Data->ignore("save");
@@ -43,7 +43,6 @@ class Establecimiento_Model extends ZP_Model {
 
   public function getById($id) {
     $data = $this->Db->find($id, $this->table, $this->fields);
-    //____($data);
     return $data[0];
   }
 
