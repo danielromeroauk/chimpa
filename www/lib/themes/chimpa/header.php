@@ -2,7 +2,7 @@
 <html lang="<?php print get("webLang"); ?>">
 	<head>
 		<meta charset="utf-8" />
-		<title><?php print $this->getTitle(); ?></title>
+		<title><?php print decode($this->getTitle()); ?></title>
 
 		<link rel="stylesheet" href="<?php print path("vendors/css/frameworks/bootstrap/bootstrap.min.css", "zan"); ?>" />
 
@@ -20,7 +20,7 @@
 			<![endif]-->
 		<!-- Le styles -->
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="<?php print $this->themePath; ?>/js/kendo.web.min.js"></script>
     <script src="<?php print $this->themePath; ?>/js/chimpa.js"></script>
