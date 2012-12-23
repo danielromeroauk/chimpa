@@ -60,7 +60,6 @@ class Articulo_Model extends ZP_Model {
       "descripcion" => array("required","injection?"),
       "precio"      => "required",
       "porciva"     => "required",
-      "estado"      => "required",
       "unidad"      => "required"
     );
 
