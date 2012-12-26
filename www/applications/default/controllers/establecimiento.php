@@ -43,13 +43,13 @@ class Establecimiento_Controller extends ZP_Controller {
       $vars["alert"] = $this->Establecimiento_Model->edit();
     }
 
-    $vars["edit"] = TRUE;
+    $vars["edit"] = 1;
     $vars["data"] = $this->Establecimiento_Model->getById(urldecode($id));
     $vars["view"] = $this->view("establecimiento", TRUE);
     $this->render("content", $vars);
   }
 
-  public function listado($editar = FALSE) {
+  public function listado($editar = NULL) {
     isConnected(get("webURL"));
     if(!in_array(SESSION("rol"), array(0))) { redirect(get("webURL") .'/default/default/inicio'); }
 
@@ -57,9 +57,10 @@ class Establecimiento_Controller extends ZP_Controller {
 
     $this->Establecimiento_Model = $this->model("Establecimiento_Model");
 
-    $vars["editar"] = ($editar === "TRUE") ? $editar : FALSE;
-    $vars["data"] = $this->Establecimiento_Model->getListado();
-    $vars["view"] = $this->view("establecimientos", TRUE);
+    $vars["editar"] = $editar;
+    $vars["data"]   = $this->Establecimiento_Model->getListado();
+    $vars["view"]   = $this->view("establecimientos", TRUE);
+
     $this->render("content", $vars);
   }
 
