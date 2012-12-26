@@ -11,12 +11,16 @@ class Articulo_Model extends ZP_Model {
   public function __construct() {
     $this->Db = $this->db();
     $this->table = "articulo";
-    $this->fields = "id, descripcion, precio, porciva, estado, unidad, notas, apartados";
+    $this->fields = "articulo.id, descripcion, precio, porciva, estado, unidad, notas, apartados";
     $this->Data = $this->core("Data");
   }
 
-  public function getListado($fila = 0, $cant = 30) {
-    return $this->Db->findAll($this->table, $this->fields, NULL, 1, "$fila, $cant");
+  public function getListado($where, $fila = 0, $cant = 12) {
+    $return['num_rows'] = $this->Db->countBySQL($where, $this->table);
+    #$return['rows'] = $this->Db->findBySQL($where, $this->table, $this->fields, NULL, 2, "$fila, $cant");
+    $return['rows'] = $this->Db->query("SELECT $this->fields, unidad.nombre AS unidad FROM articulo INNER JOIN unidad ON articulo.unidad = unidad.id WHERE $where ORDER BY 2 LIMIT $fila, $cant");
+    //____($return);
+    return $return;
   }
 
   public function save() {
