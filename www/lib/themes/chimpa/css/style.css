@@ -36,7 +36,7 @@ h1 > small {
   color: yellow;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="number"], select {
   border-radius: .5em;
   box-shadow: 3px 3px 5px rgba(0, 0, 0,.6);
   font-family: "Salsa";
@@ -78,6 +78,23 @@ section#logueo > img {
   margin: 0 .6em;
 }
 
+td, td {
+  vertical-align: top;
+}
+
+.articulo {
+  box-shadow: 0 0 5px rgba(0, 0, 0,.6);
+  display: inline-block;
+  margin: 1em;
+  padding: .5em;
+  vertical-align: top;
+  width: 20em;
+}
+
+.articulo span {
+  font-size: .8em;
+}
+
 .forms label {
   display: inline;
 }
@@ -100,6 +117,10 @@ section#logueo > img {
 
 .listado tbody tr:hover {
   background: #DFF4FF;
+}
+
+.paginacion button {
+  display: inline-block;
 }
 
 .right {
