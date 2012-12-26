@@ -56,21 +56,31 @@ class Articulo_Controller extends ZP_Controller {
   }
 
   /**
+   * Muestra el listado de artículos filtrados.
    * @param integer $fila desde que fila empezar.
    * @param integer $cant cantidad de registros a mostrar.
    * @param boolean $editar muestra el botón editar junto a cada registro.
    */
-  public function listado($editar = FALSE, $fila = 0, $cant = 20) {
+  public function listado($fila = 0, $cant = 12, $editar = NULL) {
     isConnected(get("webURL"));
     if(!in_array(SESSION("rol"), array(0))) { redirect(get("webURL") .'/default/default/inicio'); }
 
-    $this->title("Artículos");
+    $where = "1";
+    #POST();
 
-    $vars["editar"] = ($editar === "TRUE") ? $editar : FALSE;
-    $vars["data"]   = $this->Articulo_Model->getListado($fila, $cant);
-    $vars["view"]   = $this->view("articulos", TRUE);
+    if(POST("filtro")) {
+      $where = "articulo.id LIKE '%". POST('filtro') ."%' OR descripcion LIKE '%". POST('filtro') ."%'";
+      $fila = POST("registro") ? POST("registro") : $fila;
+    }
+
+    $data             = $this->Articulo_Model->getListado($where, $fila, $cant);
+    $vars["num_rows"] = $data["num_rows"];
+    $vars["data"]     = $data["rows"];
+    $vars["editar"]   = $editar;
+    $vars["view"]     = $this->view("articulos", TRUE);
 
     $this->render("content", $vars);
-  }
+
+  } # filtros
 
 }
