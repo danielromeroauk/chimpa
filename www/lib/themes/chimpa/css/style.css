@@ -126,3 +126,7 @@ td, td {
 .right {
   text-align: right;
 }
+
+#filtrar {
+  font-size: 1em;
+}
