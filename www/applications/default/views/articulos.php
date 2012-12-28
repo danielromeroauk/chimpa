@@ -6,7 +6,7 @@
         <input type="text" name="filtro" id="filtro" placeholder="Buscar..." value="<?php echo recoverPOST('filtro'); ?>" />
       </td>
       <td>
-        <input type="submit" name="filtrar" id="filtrar" value="Buscar" />
+        <button name="filtrar" id="filtrar" value="<?php echo empty($editar) ? NULL : 1; ?>">Buscar</button>
       </td>
     </tr>
   </table>
@@ -33,7 +33,9 @@
 <section class="paginacion">
 <?php
   for ($i=0; $i < ($num_rows/12); $i++) {
-    echo '<button name="registro" value="'. ($i*12). '"';
+    echo '<button name="registro" value="';
+    echo (empty($editar)) ? ($i*12) : ($i*12) .'/12/1';
+    echo '"';
     echo (recoverPOST("registro") == ($i*12)) ? ' disabled': NULL;
     echo '>'. ($i+1) .'</button>';
   }

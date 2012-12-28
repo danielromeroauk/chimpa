@@ -66,11 +66,20 @@ class Articulo_Controller extends ZP_Controller {
     if(!in_array(SESSION("rol"), array(0))) { redirect(get("webURL") .'/default/default/inicio'); }
 
     $where = "1";
-    #POST();
 
     if(POST("filtro")) {
-      $where = "articulo.id LIKE '%". POST('filtro') ."%' OR descripcion LIKE '%". POST('filtro') ."%'";
-      $fila = POST("registro") ? POST("registro") : $fila;
+      $filtro     = POST("filtro");
+      $where      = "articulo.id LIKE '%". $filtro ."%' OR descripcion LIKE '%". $filtro ."%'";
+    }
+
+    $paginacion = explode("/", POST("registro"));
+    $fila       = (isset($paginacion['0']) && $paginacion['0'] != '' ) ? $paginacion['0'] : $fila;
+    $cant       = isset($paginacion['1']) ? $paginacion['1'] : $cant;
+
+    if(POST("filtrar") == 1) {
+      $editar = 1;
+    } elseif (isset($paginacion['2'])) {
+      $editar = $paginacion['2'];
     }
 
     $data             = $this->Articulo_Model->getListado($where, $fila, $cant);

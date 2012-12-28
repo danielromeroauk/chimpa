@@ -17,9 +17,8 @@ class Articulo_Model extends ZP_Model {
 
   public function getListado($where, $fila = 0, $cant = 12) {
     $return['num_rows'] = $this->Db->countBySQL($where, $this->table);
-    #$return['rows'] = $this->Db->findBySQL($where, $this->table, $this->fields, NULL, 2, "$fila, $cant");
-    $return['rows'] = $this->Db->query("SELECT $this->fields, unidad.nombre AS unidad FROM articulo INNER JOIN unidad ON articulo.unidad = unidad.id WHERE $where ORDER BY 2 LIMIT $fila, $cant");
-    //____($return);
+    $return['rows'] = $this->Db->query("SELECT $this->fields, unidad.nombre AS unidad FROM articulo INNER JOIN unidad ON articulo.unidad = unidad.id WHERE ". $where ." ORDER BY 2 LIMIT $fila, $cant");
+
     return $return;
   }
 
