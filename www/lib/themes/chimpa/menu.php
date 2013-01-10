@@ -35,7 +35,8 @@
         </ul>
       </li>
     <?php } #if ?>
-		<?php if(in_array(SESSION("rol"), array(0,1,2,4))) { ?><li><a href="#">Remisiones pendientes</a></li><?php } #if ?>
+    <?php if(in_array(SESSION("rol"), array(0,1,2,4))) { ?><li><a href="#">Remisiones pendientes</a></li><?php } #if ?>
+		<?php if(in_array(SESSION("rol"), array(0,1,2,4))) { ?><li><a href="<?php echo get("webURL"); ?>/default/articulo/carrito">Carrito</a></li><?php } #if ?>
 		<li><a href="<?php echo get("webURL"); ?>/default/default/logout">Cerrar sesión <?php echo SESSION("user"); ?></a></li>
 	</ul>
 </nav>

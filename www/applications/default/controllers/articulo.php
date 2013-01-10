@@ -92,4 +92,36 @@ class Articulo_Controller extends ZP_Controller {
 
   } # filtros
 
+  function addToCarrito($articulo) {
+    isConnected(get("webURL"));
+    if(!in_array(SESSION("rol"), array(0,1,4))) { redirect(get("webURL") .'/default/default/inicio'); }
+
+    if(is_array(SESSION('carrito'))) {
+      $temp = SESSION('carrito');
+      if(!in_array($articulo, $temp)) {
+        array_push($temp, $articulo);
+        SESSION('carrito', $temp);
+      }
+    } else {
+      SESSION('carrito', array($articulo));
+    }
+
+  } # addToCarrito
+
+  /**
+   * Muestra el contenido del carrito
+   * @param int $vaciar 1:no 2:si
+   */
+  function carrito($vaciar=1) {
+    isConnected(get("webURL"));
+    if(!in_array(SESSION("rol"), array(0,1,4))) { redirect(get("webURL") .'/default/default/inicio'); }
+
+    if($vaciar == 2) {
+      SESSION("carrito", "Vacío");
+    }
+
+    $vars["view"] = $this->view("carrito", TRUE);
+    $this->render("content", $vars);
+  }
+
 }
