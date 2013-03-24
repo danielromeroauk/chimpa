@@ -17,9 +17,9 @@
 		<!-- Le styles -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap.js", "zan"); ?>"></script>
     <script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap-dropdown.js", "zan"); ?>"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="<?php print $this->themePath; ?>/js/chimpa.js"></script>
 
     <?php print $this->getJs(); ?>
@@ -28,11 +28,9 @@
 
 	<body>
     <div id="contenedor">
-      <header>
-        <h1>adsiar.com <small>Control de inventarios</small></h1>
-      </header>
-      <?php
-        if (SESSION("user")) {
-          require_once 'menu.php';
-        } #if
-      ?>
+        <header>
+          <h1>adsiar.com <small>Control de inventarios</small></h1>
+        </header>
+      <?php if(SESSION("user")) {
+        require_once 'menu.php';
+      } #if ?>
