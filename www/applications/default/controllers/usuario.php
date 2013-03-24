@@ -27,7 +27,7 @@ class Usuario_Controller extends ZP_Controller {
     $this->render("content", $vars);
   }
 
-  public function agregar() {
+  public function add() {
     $this->title("Agregar usuario");
     if (POST('add')) {
       $vars["alert"] = $this->Usuario_Model->add();
