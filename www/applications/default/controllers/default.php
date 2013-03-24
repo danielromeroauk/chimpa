@@ -31,6 +31,11 @@ class Default_Controller extends ZP_Controller {
       $vars["view"] = $this->view("login", TRUE);
       $this->render("content", $vars);
     } else {
+      /*Se crea la variable de sesión con el nombre del establecimiento asignado al usuario logueado*/
+      $this->Establecimiento_Model = $this->model("Establecimiento_Model");
+      $userBranchName = $this->Establecimiento_Model->getById(SESSION("branch"));
+      SESSION('branchName', $userBranchName['nombre']);
+
       redirect(get("webURL") .'/default/default/inicio');
     }
 
@@ -39,7 +44,8 @@ class Default_Controller extends ZP_Controller {
   public function inicio() {
     isConnected(get("webURL"));
     $this->title("Inicio");
-    $vars["message"] = "Estamos dentro";
+
+    $vars["message"] = "Estamos dentro de ". SESSION('branchName');
     $vars["view"] = $this->view("show", TRUE);
     $this->render("content", $vars);
   }
