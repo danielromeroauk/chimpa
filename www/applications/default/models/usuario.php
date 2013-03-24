@@ -11,7 +11,7 @@ class Usuario_Model extends ZP_Model {
 	public function __construct() {
 		$this->Db = $this->db();
 		$this->table = "usuario";
-		$this->fields = "nickname, password, rol";
+		$this->fields = "id, nickname, password, rol";
 	}
 
 	public function valido($nickname, $password) {
@@ -20,6 +20,11 @@ class Usuario_Model extends ZP_Model {
 		if ($data) {
 			SESSION("user", $data[0]['nickname']);
 			SESSION("rol", $data[0]['rol']);
+
+			$userLugar = $this->Db->query("SELECT establecimiento FROM ubicacion WHERE usuario = '". $data[0]['id'] ."' ORDER BY fecha DESC LIMIT 0, 1");
+			$userLugarId = $userLugar[0]['establecimiento'];
+      SESSION("branch", $userLugarId);
+
 			return TRUE;
 		} else {
 			return getAlert("El usuario o password incorrecto.");
