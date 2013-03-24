@@ -48,6 +48,18 @@ input[type="text"]:focus, input[type="password"]:focus {
   box-shadow: 3px 3px 5px rgba(25, 25, 112,.9);
 }
 
+nav#menu-principal > ul > li > a {
+  background: #FFFFE0;
+  color: #000;
+}
+
+nav#menu-principal > ul > li > a:hover,
+nav#menu-principal > ul > li.dropdown.open > a {
+  background: #000;
+  color: #FFF;
+}
+
+/*
 nav#menu-principal {
   margin: 0 0 1em 0;
 }
@@ -61,7 +73,7 @@ nav#menu-principal ul li ul li {
   font-size: .9em;
   width: 100%;
 }
-
+*/
 section#contenido, aside#lateral1, section#logueo > form, section#logueo > img  {
   display: inline-block;
   vertical-align: top;
@@ -125,6 +137,20 @@ td, td {
 
 .right {
   text-align: right;
+}
+
+.nav-tabs .dropdown-toggle .caret, .nav-pills .dropdown-toggle .caret,
+.nav li.dropdown.open .caret, .nav li.dropdown.open a:hover .caret {
+  border-top-color: #000;
+  border-bottom-color: #000;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  opacity: 1;
+}
+
+.nav-tabs .dropdown-toggle:hover .caret, .nav-pills .dropdown-toggle:hover .caret {
+  border-top-color: #FFF;
+  border-bottom-color: #FFF;
 }
 
 #filtrar {

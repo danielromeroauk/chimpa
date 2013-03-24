@@ -5,11 +5,7 @@
 		<title><?php print decode($this->getTitle()); ?></title>
 
 		<link rel="stylesheet" href="<?php print path("vendors/css/frameworks/bootstrap/bootstrap.min.css", "zan"); ?>" />
-
-		<link href="<?php print $this->themePath; ?>/css/kendo.common.min.css" rel="stylesheet" />
-    <link href="<?php print $this->themePath; ?>/css/kendo.default.min.css" rel="stylesheet" />
     <link href="http://code.jquery.com/ui/1.9.2/themes/cupertino/jquery-ui.css" rel="stylesheet">
-
     <link href="<?php print $this->themePath; ?>/css/style.css" rel="stylesheet" />
 
 		<?php print $this->getCSS(); ?>
@@ -20,9 +16,10 @@
 			<![endif]-->
 		<!-- Le styles -->
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-    <script src="<?php print $this->themePath; ?>/js/kendo.web.min.js"></script>
+    <script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap.js", "zan"); ?>"></script>
+    <script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap-dropdown.js", "zan"); ?>"></script>
     <script src="<?php print $this->themePath; ?>/js/chimpa.js"></script>
 
     <?php print $this->getJs(); ?>
@@ -32,7 +29,7 @@
 	<body>
     <div id="contenedor">
       <header>
-        <h1>Construimportados.com <small>Control de inventarios</small></h1>
+        <h1>adsiar.com <small>Control de inventarios</small></h1>
       </header>
       <?php
         if (SESSION("user")) {
